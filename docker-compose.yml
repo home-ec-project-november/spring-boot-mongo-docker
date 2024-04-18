@@ -13,16 +13,25 @@ services:
       - springappnetwork
     depends_on:
       - mongo
+    deploy:  # This will be considered only in docker swarm.
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 20s
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
   mongo:
     image: mongo
-    container_name: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=devdb
-      - MONGO_INITDB_ROOT_PASSWORD=devdb@1306
+      - MONGO_INITDB_ROOT_PASSWORD=devdb123
     volumes:
       - mongodb:/data/db
+    restart: always
     networks:
-      - springappnetwork
+    - springappnetwork
 volumes:
   mongodb:
     name: mongodb
