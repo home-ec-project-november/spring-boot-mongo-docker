@@ -39,5 +39,5 @@ volumes:
 networks:
   springappnetwork:
     name: springappnetwork
-    #driver: bridge
+    #driver: local/bridge/overlay
     external: true
