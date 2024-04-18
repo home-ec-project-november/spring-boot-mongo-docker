@@ -2,7 +2,7 @@ version: '3.8'
 services:
   springapp:
     container_name: springapp
-    image: ravshan1972/spring-boot-mongo-docker:1
+    image: ravshan1972/spring-boot-mongo-docker:latest
     ports:
     - 9090:8080
     environment:
