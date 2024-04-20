@@ -13,7 +13,7 @@ services:
       - springappnetwork
     depends_on:
       - mongo
-    mongo:
+  mongo:
     image: mongo
     container_name: mongo
     environment:
