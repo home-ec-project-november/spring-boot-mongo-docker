@@ -2,6 +2,7 @@ version: '3.8'
 services:
   springapp:
     image: ravshan1972/spring-boot-mongo-docker:VERSION
+    container_name: springapp-docker
     ports:
     - 9090:8080
     environment:
@@ -14,6 +15,7 @@ services:
       - mongo
   mongo:
     image: mongo
+    container_name: mongo-docker
     environment:
       - MONGO_INITDB_ROOT_USERNAME=devdb
       - MONGO_INITDB_ROOT_PASSWORD=devdb123
