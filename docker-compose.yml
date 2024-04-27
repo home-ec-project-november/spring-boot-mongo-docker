@@ -22,19 +22,19 @@ services:
     restart: always
     networks:
       - springappnetwork
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
+    #deploy:
+     # restart_policy:
+      #  condition: on-failure
+       # delay: 5s
+        #max_attempts: 3
+        #window: 120s
 volumes:
   mongodb:
-    name: "mongodb"
-    #driver: local
-    external: true
+    name: mongodb
+    driver: local
+    #external: true
 networks:
   springappnetwork:
-    name: "springappnetwork"
+    name: springappnetwork
     #driver: local/bridge/overlay
     external: true
