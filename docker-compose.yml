@@ -19,6 +19,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=devdb@123
     volumes:
       - mongodb:/data/db
+    restart: always
     networks:
       - springappnetwork
     deploy:
@@ -31,7 +32,7 @@ volumes:
   mongodb:
     name: "mongodb"
     #driver: local
-    #external: true
+    external: true
 networks:
   springappnetwork:
     name: "springappnetwork"
