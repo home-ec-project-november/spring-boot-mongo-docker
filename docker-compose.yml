@@ -31,7 +31,7 @@ volumes:
   mongodb:
     name: "mongodb"
     #driver: local
-    external: true
+    #external: true
 networks:
   springappnetwork:
     name: "springappnetwork"
