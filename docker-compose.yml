@@ -16,7 +16,7 @@ services:
     image: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=devdb
-      - MONGO_INITDB_ROOT_PASSWORD=devdb123
+      - MONGO_INITDB_ROOT_PASSWORD=devdb@123
     volumes:
       - mongodb:/data/db
     networks:
