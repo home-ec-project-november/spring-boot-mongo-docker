@@ -16,23 +16,23 @@ services:
     image: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=devdb
-      - MONGO_INITDB_ROOT_PASSWORD=devdb123
+      - MONGO_INITDB_ROOT_PASSWORD=devdb@123
     volumes:
       - mongodb:/data/db
     restart: always
     networks:
       - springappnetwork
-    #deploy:
-     # restart_policy:
-      #  condition: on-failure
-       # delay: 5s
-        #max_attempts: 3
-        #window: 120s
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
 volumes:
   mongodb:
     name: mongodb
     driver: local
-    #external: true
+    external: true
 networks:
   springappnetwork:
     name: springappnetwork
